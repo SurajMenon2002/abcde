@@ -66,4 +66,4 @@ def video_feed():
 def exit_page():
     return render_template('exit.html')
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=8000)
