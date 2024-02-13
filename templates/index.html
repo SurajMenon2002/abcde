@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Sign Language Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            width: 100%;
+            padding: 1em 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1em;
+        }
+
+    
+        
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1em;
+        }
+
+        .control-btn {
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .control-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sign-to-try {
+            margin-bottom: 20px;
+            /* Adds space between the instruction text and the signs */
+            font-size: 1.2em;
+            /* Optional: Adjusts the size of the instruction text */
+            text-align: center;
+            /* Centers the instruction text */
+        }
+
+        .instructions {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            gap: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .sign {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            text-align: center;
+        }
+
+        .sign img {
+            width: 100%;
+            height: auto;
+            max-height: 80%;
+        }
+
+        .sign p {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Interactive Sign Language Detection</h1>
+    </header>
+    <main>
+        <center>Detection Time: 30 Frames, Make sure all the keypoints are visible - Face, Hands & Elbows</center>
+        <div class="video-container">
+
+            <img src="{{ url_for('video_feed') }}" alt="Video Feed" />
+        </div>
+
+        <div class="controls">
+            <a href="{{ url_for('exit_page') }}" class="control-btn">Exit</a>
+        </div>
+        <div class="main-content">
+            <p class="sign-to-try">Sign To Try:</p>
+            <div class="instructions">
+                <div class="sign">
+                    <img src="{{url_for('static', filename='hello.png')}}" />
+                    <p>Hello</p>
+                </div>
+                <div class="sign">
+                    <img src="{{url_for('static', filename='imagine.png')}}" />
+                    <p>Imagine</p>
+                </div>
+                <div class="sign">
+                    <img src="{{url_for('static', filename='cup.png')}}" />
+                    <p>Cup</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+
+    </script>
+</body>
+
+</html>
